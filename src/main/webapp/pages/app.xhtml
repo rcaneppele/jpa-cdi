@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition template="_template.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+	<ui:define name="titulo">DADOS DA APP</ui:define>
+	
+	<ui:define name="principal">
+		<f:view transient="true">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">CLIENTES CADASTRADOS(DataBase: app)</h3>
+				</div>
+				
+				<div class="panel-body">
+					<div class="table-responsive">
+						<form jsf:id="form-listagem" jsf:prependId="false">
+							<h:dataTable styleClass="table table-hover table-striped table-bordered" value="#{clienteBean.todos}" var="cliente">
+								<h:column>
+									<f:facet name="header">NOME</f:facet>
+									<h:outputText value="#{cliente.nome}" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">EMAIL</f:facet>
+									<h:outputText value="#{cliente.email}" />
+								</h:column>
+							</h:dataTable>
+						</form>
+					</div>
+				</div>
+			</div>
+		</f:view>
+	</ui:define>
+</ui:composition>

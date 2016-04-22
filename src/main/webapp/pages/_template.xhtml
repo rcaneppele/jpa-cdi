@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>JPA - CDI</title>
+	
+	<link rel="stylesheet" href="#{request.contextPath}/resources/bootstrap/css/bootstrap.min.css" />
+</head>
+
+<body>
+	<div class="container">
+		<ui:include src="_menu.xhtml" />
+		
+		<h:messages style="list-style:none;padding-left:0;" errorClass="alert alert-danger" infoClass="alert alert-success" />
+		<ui:insert name="principal" />
+	</div>
+	
+	<script type="text/javascript" src="#{request.contextPath}/resources/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
